@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *uuid;
 @property (weak, nonatomic) IBOutlet UITextField *idInput;
-@property (nonatomic, strong) UITableView *tableView;
+@property (weak, nonatomic)IBOutlet UITableView *tableView;
 @property (nonatomic, copy) NSArray *beacons;
 @property (nonatomic, strong) JVIBeaconManager *beaconManager;
 @end
@@ -49,24 +49,23 @@
     }];
     
     
-    self.tableView = ({
-        UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-        tableView.showsVerticalScrollIndicator = NO;
-        tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
-           tableView.rowHeight = UITableViewAutomaticDimension;
+   
+        self.tableView.showsVerticalScrollIndicator = NO;
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+           self.tableView.rowHeight = UITableViewAutomaticDimension;
           
            if (@available(iOS 11.0, *)) { //iOS 9的系统会报错
-               tableView.estimatedSectionHeaderHeight = CGFLOAT_MIN;
-               tableView.estimatedSectionFooterHeight = CGFLOAT_MIN;
+               self.tableView.estimatedSectionHeaderHeight = CGFLOAT_MIN;
+               self.tableView.estimatedSectionFooterHeight = CGFLOAT_MIN;
            }
            
-           tableView.delegate = self;
-           tableView.dataSource = self;
+           self.tableView.delegate = self;
+           self.tableView.dataSource = self;
            
-           [self.view addSubview:tableView];
            
-           tableView;
-    });
+           
+
+
     
 }
 - (IBAction)scan:(id)sender {

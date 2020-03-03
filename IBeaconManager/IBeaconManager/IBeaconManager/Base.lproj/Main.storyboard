@@ -38,6 +38,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LSb-fU-aKI">
+                                <rect key="frame" x="0.0" y="216" width="414" height="646"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -47,9 +51,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XQe-4y-r8a" secondAttribute="trailing" constant="5" id="DCe-lD-xgl"/>
                             <constraint firstItem="yrJ-ur-9kR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Hzq-wp-OYL"/>
                             <constraint firstItem="XQe-4y-r8a" firstAttribute="leading" secondItem="nUm-wD-KVw" secondAttribute="trailing" constant="5" id="JIS-Xt-WlO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LSb-fU-aKI" secondAttribute="bottom" id="KxI-cD-cnk"/>
                             <constraint firstItem="XQe-4y-r8a" firstAttribute="centerY" secondItem="nUm-wD-KVw" secondAttribute="centerY" id="LUa-jv-zGK"/>
                             <constraint firstItem="nUm-wD-KVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="M12-MD-xfb"/>
+                            <constraint firstItem="LSb-fU-aKI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S05-Jb-j4m"/>
+                            <constraint firstItem="LSb-fU-aKI" firstAttribute="top" secondItem="XQe-4y-r8a" secondAttribute="bottom" id="ZFD-eh-Hj6"/>
                             <constraint firstItem="eaE-4Z-VD5" firstAttribute="centerY" secondItem="yrJ-ur-9kR" secondAttribute="centerY" id="hUp-sn-SDE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LSb-fU-aKI" secondAttribute="trailing" id="lyL-9C-cuB"/>
                             <constraint firstItem="eaE-4Z-VD5" firstAttribute="leading" secondItem="yrJ-ur-9kR" secondAttribute="trailing" constant="5" id="rq4-qw-ZKx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -63,6 +71,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="idInput" destination="XQe-4y-r8a" id="uHT-5d-QnZ"/>
+                        <outlet property="tableView" destination="LSb-fU-aKI" id="jZD-r7-0tB"/>
                         <outlet property="uuid" destination="eaE-4Z-VD5" id="lRc-Xs-3AM"/>
                     </connections>
                 </viewController>
