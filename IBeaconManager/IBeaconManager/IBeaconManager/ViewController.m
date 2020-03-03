@@ -11,6 +11,8 @@
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITextField *uuid;
+@property (weak, nonatomic) IBOutlet UITextField *idInput;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *beacons;
 @property (nonatomic, strong) JVIBeaconManager *beaconManager;
@@ -20,6 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.uuid.text = @"FAAC0866-0CD8-4F5B-A4D4-BE52F88BE149";
+    self.idInput.text = @"com.Technology.IBeacon";
+    
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.beaconManager = ({
@@ -65,6 +71,8 @@
 }
 - (IBAction)scan:(id)sender {
     
+    self.beaconManager.uuid = self.uuid.text;
+    self.beaconManager.beaconIdentifier = self.idInput.text;
     [self.beaconManager startScanBeacon];
 }
 

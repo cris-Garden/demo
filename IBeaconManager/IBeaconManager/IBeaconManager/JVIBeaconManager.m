@@ -8,8 +8,8 @@
 
 #import "JVIBeaconManager.h"
 
-NSString *BeaconIdentifier = @"com.Technology.IBeacon";
-static NSString * const uuid  = @"FAAC0866-0CD8-4F5B-A4D4-BE52F88BE149";
+//NSString *BeaconIdentifier = @"com.Technology.IBeacon";
+//static NSString * const uuid  = @"FAAC0866-0CD8-4F5B-A4D4-BE52F88BE149";
 
 @interface JVIBeaconManager ()<CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -35,26 +35,6 @@ static NSString * const uuid  = @"FAAC0866-0CD8-4F5B-A4D4-BE52F88BE149";
         manager.delegate = self;
         manager;
     });
-    
-    self.beaconRegion = ({
-        CLBeaconRegion *beaconRegion;
-        if (@available(iOS 13.0, *)) {
-            beaconRegion = [[CLBeaconRegion alloc]initWithUUID:[[NSUUID alloc]initWithUUIDString:uuid] identifier:BeaconIdentifier];
-        } else {
-            // Fallback on earlier versions
-            beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:[[NSUUID alloc]initWithUUIDString:uuid] identifier:BeaconIdentifier];
-        }
-        
-        beaconRegion.notifyEntryStateOnDisplay = YES;
-        beaconRegion;
-    });
-    
-    if (@available(iOS 13.0, *)) {
-        self.beaconConstraint = ({
-            CLBeaconIdentityConstraint *beacon = [[CLBeaconIdentityConstraint alloc]initWithUUID:[[NSUUID alloc]initWithUUIDString:uuid]];
-            beacon;
-        });
-    }
 }
 
 /**查询权限*/
@@ -88,6 +68,26 @@ static NSString * const uuid  = @"FAAC0866-0CD8-4F5B-A4D4-BE52F88BE149";
     
     /**判断位置权限是否开启*/
     if (![self isMonitoringAvailable]) return;
+    
+    self.beaconRegion = ({
+        CLBeaconRegion *beaconRegion;
+        if (@available(iOS 13.0, *)) {
+            beaconRegion = [[CLBeaconRegion alloc]initWithUUID:[[NSUUID alloc]initWithUUIDString:self.uuid] identifier:self.beaconIdentifier];
+        } else {
+            // Fallback on earlier versions
+            beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:[[NSUUID alloc]initWithUUIDString:self.uuid] identifier:self.beaconIdentifier];
+        }
+        
+        beaconRegion.notifyEntryStateOnDisplay = YES;
+        beaconRegion;
+    });
+    
+    if (@available(iOS 13.0, *)) {
+        self.beaconConstraint = ({
+            CLBeaconIdentityConstraint *beacon = [[CLBeaconIdentityConstraint alloc]initWithUUID:[[NSUUID alloc]initWithUUIDString:self.uuid]];
+            beacon;
+        });
+    }
 
     [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
     [self.locationManager startMonitoringForRegion:self.beaconRegion];

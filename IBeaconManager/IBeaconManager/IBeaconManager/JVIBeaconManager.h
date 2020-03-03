@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^MonitoringSuccessBlock)(CLRegion *region, BOOL isIn);
 typedef void(^RangeBeaconsSuccessBlock)(NSArray *beacons);
 @interface JVIBeaconManager : NSObject
+@property (nonatomic, copy) NSString *beaconIdentifier;
+@property (nonatomic, copy) NSString *uuid;
 /**进入/退出该区域*/
 @property (nonatomic, copy) MonitoringSuccessBlock monitoringBlock;
 /**发现该区域的所有iBeacon设备*/
