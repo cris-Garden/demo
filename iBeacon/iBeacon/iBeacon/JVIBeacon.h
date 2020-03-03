@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JVIBeacon : NSObject
+@property (nonatomic, strong) NSString *uuid;
+@property (nonatomic, strong) NSString *idText;
 /**开始广播信标信号*/
 - (void)startAdvertiseWithMajor:(NSNumber *)major minor:(NSNumber *)minor;
 @end

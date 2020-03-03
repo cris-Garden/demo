@@ -14,7 +14,7 @@
 @property (nonatomic, strong) CBPeripheralManager *peripheralManager;
 @property (nonatomic, strong) NSNumber *major;
 @property (nonatomic, strong) NSNumber *minor;
-@property (nonatomic, strong) String *uuid;
+
 @end
 
 @implementation JVIBeacon
@@ -33,18 +33,25 @@
 
 - (void)startAdvertiseWithMajor:(NSNumber *)major minor:(NSNumber *)minor {
     
+    self.major = major;
+    self.minor = minor;
+    NSLog(@"uuid:%@",self.uuid);
+    NSLog(@"major:%@",self.major);
+    NSLog(@"minor:%@",self.minor);
+    NSLog(@"id:%@",self.idText);
+    
     if(self.peripheralManager.state < CBPeripheralManagerStatePoweredOn)
     {
         /**设备蓝牙未开启*/
         NSLog(@"To configure your device as a beacon,");
         return;
     }
-    self.major = major;
-    self.minor = minor;
+   
     
     [self.peripheralManager stopAdvertising];
     /**开始广播信号*/
     [self advertiseDevice:[self createBeaconRegion]];
+    
 }
 
 #pragma mark ----------- 开始通过蓝牙广播信标信号 -------------
@@ -69,10 +76,10 @@
     /**实例化信标区域*/
     CLBeaconRegion *region;
     if (@available(iOS 13.0, *)) {
-        region = [[CLBeaconRegion alloc]initWithUUID:uuid major:[self.major shortValue] minor:[self.minor shortValue] identifier:@"com.Technology.IBeacon"];
+        region = [[CLBeaconRegion alloc]initWithUUID:uuid major:[self.major shortValue] minor:[self.minor shortValue] identifier:self.idText];
         
     } else {
-        region = [[CLBeaconRegion alloc]initWithProximityUUID:uuid major:[self.major shortValue] minor:[self.minor shortValue] identifier:@"com.Technology.IBeacon"];
+        region = [[CLBeaconRegion alloc]initWithProximityUUID:uuid major:[self.major shortValue] minor:[self.minor shortValue] identifier:self.idText];
     }
     return region;
 }

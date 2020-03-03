@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z98-K6-74D">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +15,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lha-bQ-FfL">
+                                <rect key="frame" x="43" y="118" width="366" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uuid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk0-sw-vYg">
+                                <rect key="frame" x="5" y="124.5" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-Yn-LNk">
+                                <rect key="frame" x="53" y="184" width="356" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCt-0m-iFh">
+                                <rect key="frame" x="5" y="190.5" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-hj-tGA">
+                                <rect key="frame" x="64" y="248" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtm-rV-P0z">
+                                <rect key="frame" x="5" y="254.5" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2oX-WV-ra6">
+                                <rect key="frame" x="24" y="312" width="385" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnw-UE-kd0">
+                                <rect key="frame" x="5" y="318.5" width="14" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Aub-hj-tGA" firstAttribute="top" secondItem="h2u-Yn-LNk" secondAttribute="bottom" constant="30" id="8k1-Pl-BeQ"/>
+                            <constraint firstItem="h2u-Yn-LNk" firstAttribute="leading" secondItem="yCt-0m-iFh" secondAttribute="trailing" constant="5" id="8oX-7e-NC0"/>
+                            <constraint firstItem="Lha-bQ-FfL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="8vN-sW-hi3"/>
+                            <constraint firstItem="Pnw-UE-kd0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="C62-Z9-iag"/>
+                            <constraint firstItem="Aub-hj-tGA" firstAttribute="leading" secondItem="rtm-rV-P0z" secondAttribute="trailing" constant="15" id="Ef8-jk-J8w"/>
+                            <constraint firstItem="Rk0-sw-vYg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="FN1-2r-qiE"/>
+                            <constraint firstItem="Pnw-UE-kd0" firstAttribute="centerY" secondItem="2oX-WV-ra6" secondAttribute="centerY" id="JJc-R0-yXG"/>
+                            <constraint firstItem="Aub-hj-tGA" firstAttribute="centerY" secondItem="rtm-rV-P0z" secondAttribute="centerY" id="LHA-Hn-KIH"/>
+                            <constraint firstItem="rtm-rV-P0z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Nl9-Ee-jhg"/>
+                            <constraint firstItem="h2u-Yn-LNk" firstAttribute="top" secondItem="Lha-bQ-FfL" secondAttribute="bottom" constant="32" id="Nzb-xm-2TY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2oX-WV-ra6" secondAttribute="trailing" constant="5" id="OUg-OI-WKa"/>
+                            <constraint firstItem="yCt-0m-iFh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Qqs-ya-GQ5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h2u-Yn-LNk" secondAttribute="trailing" constant="5" id="YvN-uE-KYc"/>
+                            <constraint firstItem="h2u-Yn-LNk" firstAttribute="top" secondItem="Lha-bQ-FfL" secondAttribute="bottom" constant="32" id="bMe-Al-pjR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lha-bQ-FfL" secondAttribute="trailing" constant="5" id="bkI-lY-WxA"/>
+                            <constraint firstItem="Lha-bQ-FfL" firstAttribute="leading" secondItem="Rk0-sw-vYg" secondAttribute="trailing" constant="5" id="cG2-V1-bMN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aub-hj-tGA" secondAttribute="trailing" constant="15" id="dWi-am-SJR"/>
+                            <constraint firstItem="Rk0-sw-vYg" firstAttribute="centerY" secondItem="Lha-bQ-FfL" secondAttribute="centerY" id="joI-oX-L5u"/>
+                            <constraint firstItem="2oX-WV-ra6" firstAttribute="leading" secondItem="Pnw-UE-kd0" secondAttribute="trailing" constant="5" id="mGw-w9-NoI"/>
+                            <constraint firstItem="h2u-Yn-LNk" firstAttribute="centerY" secondItem="yCt-0m-iFh" secondAttribute="centerY" id="yZD-A2-bpJ"/>
+                            <constraint firstItem="2oX-WV-ra6" firstAttribute="top" secondItem="Aub-hj-tGA" secondAttribute="bottom" constant="30" id="zTF-dM-90W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="7YR-2t-fUY">
@@ -24,6 +94,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="idInput" destination="2oX-WV-ra6" id="TQ7-tQ-L0N"/>
+                        <outlet property="major" destination="h2u-Yn-LNk" id="Z6G-ln-527"/>
+                        <outlet property="minor" destination="Aub-hj-tGA" id="42d-Pv-6vW"/>
+                        <outlet property="uuid" destination="Lha-bQ-FfL" id="raa-Rl-JyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
